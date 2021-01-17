@@ -164,6 +164,7 @@ font-family: 'Kaushan Script', cursive;
 font-size: 24px;
 color: #333;
 }
+
 .section__title{
    font-size: 30px;
     font-weight: 700;
@@ -317,6 +318,4 @@ opacity: 1;
 .stat__text{
     font-size: 14px;
     text-transform: uppercase;
-
 }
-
