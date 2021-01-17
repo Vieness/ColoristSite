@@ -230,12 +230,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 60px;
     height: 3px;
 
-    // margin: 30px auto 30px;
-    // background-color: #f38181;
     background-color: #fff;
 
     margin: 60px auto;
-}.section__text{
+}
+.section__text{
     color: #999999;
     font-size: 15px;
 }
