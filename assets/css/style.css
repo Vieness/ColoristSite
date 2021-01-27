@@ -228,7 +228,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Container */
 .container {
     width:100%;
-    max-width: 1200px;
+    padding: 0 15px;
+    max-width: 1230px;
     margin: 0 auto;
 }
 
@@ -278,13 +279,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Card */
 
 .card{
-    margin-top: 80px;
+    margin: 80px -15px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .card__item{
-   width: 380px; 
+   width: 33.3333%; 
+   padding: 0 15px;
 
 }
 .card__inner{
@@ -310,6 +313,8 @@ opacity: 1;
 }
 
 .card__img img{
+    max-width: 100%;
+    max-height: auto;
     transition: opacity 0.1s linear;
     display: block;    
 }
@@ -353,6 +358,7 @@ margin-bottom: 5px;
 }
 .stat{
     display: flex;
+    flex-wrap: wrap;
 
 }
 .stat__item{
@@ -379,12 +385,19 @@ margin-bottom: 5px;
 /* Services*/
 .services{
     display: flex;
+    flex-wrap: wrap;
 }
 .services__item{
-    flex: 1 1 0;
+    width: 33.33333%;
     padding-left: 85px;
     padding-right: 35px;
+    padding: 0 35px 30px 85px;
     position: relative;
+    margin-bottom: 40px;
+}
+.services__item--border{
+    border-bottom: 1px solid #e5e5e5;
+    
 }
 .services__icon{
     position: absolute;
@@ -413,6 +426,8 @@ margin-bottom: 5px;
 }
 .devices__item{
     display: block;
+    max-width: 100%;
+    height: auto;
     
 }
 .devices__item--iphone{
@@ -420,15 +435,24 @@ margin-bottom: 5px;
     bottom: -80px;
     right: 0;
     z-index: 1;
+    
 }
 
 /*We do*/
 .wedo {
     display: flex;
+    margin: 0 -15px;
+    flex-wrap: wrap;
+
 }
 .wedo__item{
-    
-    flex: 1 1 0;
+    padding: 0 15px;
+   
+}
+.wedo__img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 /* Accordion*/
 .accordion__item{
@@ -981,4 +1005,146 @@ font-family: 'Kaushan Script', cursive;
 }
 .copyright span{
     color: #f38181;
+}
+@media(max-width:1200px){
+    /* intro */
+    .intro__title{
+        font-size: 120px;
+    }
+    .intro__suptitle{
+        font-size: 52px;
+    }
+}
+@media(max-width:990px){
+    /* intro */
+    .intro__title{
+        font-size: 80px;
+    }
+    .intro__suptitle{
+        font-size: 32px;
+    }
+    /* stat */
+    .stat{
+        justify-content: center;
+    }
+    .stat__item{
+        flex: none;
+        width: 33%;
+        border: 0;
+        padding: 30px;
+    }
+    .stat__item:last-child{
+        border: 0;
+    }
+   /* services */
+   .services__item{
+       width: 50%;
+       padding-bottom: 0;
+   }
+   .services__item--border{
+       border-bottom: 0;
+   }
+}
+@media(max-width:770px){
+    /* navigation */
+    .nav{
+        display: none;
+    }
+    /* section  */
+    .section{
+        padding: 40px 0;
+    }
+    .section--devices{
+        padding-bottom: 0;
+    }
+    /* slider */
+   .slider__text{
+        display: none;
+    }
+    .slider__item-active::before{
+        width: 50%;
+    }
+    /* card */
+    .card{
+        margin-top: 50px;
+        justify-content: center;
+        
+    }
+    .card__item{
+        width: 100%;
+        max-width: 410px;
+        margin-bottom: 20px;
+    }
+    .card__item:last-child{
+        margin-bottom: 0;
+    }
+    /* services */
+    .services{
+        justify-content: center;
+    }
+    .services__item{
+        width: 100%;
+        max-width: 400px;
+        padding-left: 55px;
+        padding-right: 0;
+    }
+    .services__icon{
+        left: 0;
+    }
+    /* wedo */
+    .wedo__img{
+        display: none;
+    }
+    .wedo__item{
+        width: 100%;
+        display: flex;
+    }
+    
+}
+@media(max-width:575px){
+    /* intro */
+    .intro__title{
+        font-size: 40px;
+    }
+    .intro__suptitle{
+        font-size: 22px;
+    }
+     /* section  */
+     .section__header{
+         margin-bottom: 50px;
+     }
+     .section__suptitle{
+         font-size: 20px;
+     }
+     .sextion{
+         font-size: 24px;
+     }
+     .section__title::after{
+         margin: 20px auto;
+     }
+     /* stat */
+     .stat__item{
+         width: 100%;
+         border-bottom: 1px solid #b5eae0;
+     }
+     .stat__item:last-child{
+         border-bottom: 0;
+     }
+     .stat__count{
+         font-size: 52px;
+     }
+     /* services */
+    .services__item{
+        width: 100%;
+    }
+
+    /* devices */
+    .devices{
+        max-width: 320px;
+    }
+    .devices__item--iphone{
+        width: 180px;
+        bottom: -50px;
+        right: -40px;
+    }
 }
