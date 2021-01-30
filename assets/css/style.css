@@ -41,7 +41,8 @@ hr{
     z-index: 1000;
     padding-top: 30px;
 }
-.header-fixed{
+.header.fixed{
+    padding: 10px 0;
     
     background-color: #eb8b8d;
     position: fixed;
@@ -66,6 +67,7 @@ hr{
     font-size: 30px;
     font-weight: 700;
     color: #fff;
+    cursor: pointer;
 }
 
 /* Navigation */
@@ -129,6 +131,7 @@ hr{
 
     background: none;
     cursor: pointer;
+    outline: none;
     
 
     position: absolute;
@@ -137,7 +140,7 @@ hr{
     z-index: 1;
 }
 .nav-toggle.active .nav-toggle__item{
-background: none;
+    background: none;
 }
 .nav-toggle.active .nav-toggle__item::before{
     transform-origin: left top;
@@ -149,7 +152,7 @@ background: none;
     transform-origin: left bottom;
     transform: rotate(-45deg)
     translateX(-3px);
-    transition: transform 0.2 linear;
+    
 }
 .nav-toggle__item{
     
@@ -166,7 +169,7 @@ background: none;
     left: 0;
     margin: auto;
 
-    transition: transform 0.2 linear;
+    transition: background 0.2 linear;
 
     
 }
@@ -183,7 +186,7 @@ background: none;
     position: absolute;
     left: 0;
     z-index: 1;
-    transition: transform 0.2 linear;
+    transition: transform 0.2s linear;
 }
 .nav-toggle__item::before{
     top: -8px;
@@ -556,27 +559,32 @@ margin-bottom: 5px;
 .accordion__item{
     border: 1px solid  #e5e5e5;
     margin-bottom: 10px;
+    
 }
 .accordion__item.active
 .accordion__content{
 display: block;
+
 }
 .accordion__item.active
 .accordion__header{
     border-bottom-color:  #e5e5e5;
+    
 }
 .accordion__item.active
 .accordion__header:after{
     transform: translateY(-50%)
      rotate(-45deg);
      margin-top: 5px;
+     
 }
 .accordion__header{
     padding: 15px 20px 15px 65px;
     position: relative;
     border-bottom: 1px solid transparent;       
-    cursor: pointer;
+    cursor: pointer;  
 }
+
 .accordion__header::after{
     content: "";
     display: block;
@@ -590,6 +598,7 @@ display: block;
      z-index: 1;
      transform: translateY(-50%)
      rotate(135deg);
+     transition: .2s linear;
 }
 
 .accordion__icon{
@@ -606,6 +615,7 @@ display: block;
     font-style: italic;
     font-weight: 300;
     display: none;
+    
 }
 .accordion__title{
     font-size: 14px;
@@ -615,8 +625,12 @@ display: block;
 }
 /* Reviews*/
 .reviews{
-    padding: 0 110px;
+    
     position: relative;
+}
+.reviews .slick-slider{
+    padding: 0 110px;
+    
 }
 .reviews__item{
     padding-left: 255px;
@@ -641,8 +655,8 @@ display: block;
     font-weight: 300;
     color: #999999;
 }
-.reviews__autor{
-    
+
+.reviews__autor{    
 font-size: 24px;
 color: #000;
 font-family: 'Kaushan Script', cursive;
@@ -657,7 +671,9 @@ font-family: 'Kaushan Script', cursive;
     margin-right: 10px;
     background-color: #f38181;
 }
-.reviews__button{
+
+.slick-arrow{
+    display: block;
     position: absolute;
     top: 50%;
     z-index: 1;
@@ -665,8 +681,19 @@ font-family: 'Kaushan Script', cursive;
 
     font-size: 0;
     color: transparent;
+    cursor: pointer;
+
+    border: 0;
+    background: none;
+    outline: 0;
+    
+    
 }
-.reviews__button::after{
+.slick-slide{
+    outline: 0;
+}
+
+.slick-arrow:after{
     content: "";
     display: block;
     height: 16px;
@@ -679,12 +706,13 @@ font-family: 'Kaushan Script', cursive;
      
      
 }
-.reviews__button--prev{
+
+.slick-prev {
     left: 0;
     transform: 
-     rotate(-45deg);
+    rotate(-45deg);
 }
-.reviews__button--next{
+.slick-next {
     right: 0;
     transform: 
      rotate(135deg);
@@ -1067,9 +1095,7 @@ font-family: 'Kaushan Script', cursive;
     border-color: #95e1d3;
 }
 /* Blogs */
-.blogs{
 
-}
 .blogs__item{
     display: flex;
     margin-bottom: 30px;
@@ -1176,7 +1202,7 @@ font-family: 'Kaushan Script', cursive;
    .reviews__item{
        padding-left: 220px;
    }
-   .reviews{
+   .reviews .slick-slider{
     padding: 0 60px;
     }
     /* clients */
@@ -1224,12 +1250,18 @@ font-family: 'Kaushan Script', cursive;
     /* navigation */
     .nav{
         display: none;
+        width: 100%;
+
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: #eb8b8d;
-        width: 100%;
+        
+        background-color: #eb8b8d;      
     }
+    .nav.active{
+        display: block;
+    }
+    
     .nav__link{
         display: block;
         margin: 0;
@@ -1286,7 +1318,7 @@ font-family: 'Kaushan Script', cursive;
     }
     .wedo__item{
         width: 100%;
-        display: flex;
+        // display: flex;
     }
     /* reviews */
    .reviews__photo{
@@ -1387,10 +1419,10 @@ font-family: 'Kaushan Script', cursive;
         right: -40px;
     }
     /* reviews */
-    .reviews{
+    .reviews .slick-slider{
         padding: 0;
     }
-    .reviews__button{
+    .slick-arrow{
         top: 20%;
     }
     /* logos */
